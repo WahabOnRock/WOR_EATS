@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Trebuchet MS', sans-serif;
+            background-color: #f8f9fa; /* Light grey background */
+        }
+
+        /* Container for order form */
+        .container {
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        /* Form title */
+        h1 {
+            color: #55042a;
+            text-align: center;
+        }
+
+        /* Input fields */
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #55042a;
+            box-sizing: border-box;
+        }
+
+        /* Submit button */
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            background-color: #55042a;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #450321;
+        }
+
+        /* Confirmation message */
+        #confirmationMessage {
+            text-align: center;
+            color: green;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Check Out</h1>
+        <!-- Cart items will be listed here -->
+        
+        <form id="orderForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+
+            <label for="phonenumber">Phone Number:</label>
+            <input type="text" id="phonenumber" name="phonenumber" class="form-control" required>
+
+            <label for="address">Delivery Address:</label>
+            <input type="text" id="address" name="address" class="form-control" required>
+
+            <!-- Confirm Order Button -->
+            <button type="button" id="confirmOrderBtn" class="btn-primary">Confirm Order</button>
+        </form>
+        
+        <!-- Placeholder for confirmation message -->
+        <p id="confirmationMessage" style="display:none;">Your order is confirmed</p>
+    </div>
+
+    <script>
+        document.getElementById('confirmOrderBtn').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const phoneNumber = document.getElementById('phonenumber').value;
+            const address = document.getElementById('address').value;
+
+            if (name && phoneNumber && address) {
+                document.getElementById('confirmationMessage').style.display = 'block';
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    </script>
+</body>
+</html>

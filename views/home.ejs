@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WOR_Eats</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+    .carousel-item img {
+      margin-top: -5%;
+    }
+    .carousel-item:nth-child(3) img {
+      margin-top: -3%;
+    }
+    .section-heading {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+    .faq_area {
+      padding: 3rem 0;
+    }
+    footer {
+      background-color: #55042a;
+      color: white;
+      padding-top: 3rem;
+    }
+    .btn-warning {
+      background-color: #ffca2c;
+      border-color: #ffca2c;
+    }
+    .btn-warning:hover {
+      background-color: #e0b022;
+      border-color: #e0b022;
+    }
+    .footer-social {
+      margin-top: 1rem;
+    }
+    .footer-social .btn {
+      margin-right: 0.5rem;
+    }
+    .support-button {
+      margin-top: 2rem;
+    }
+    .menu-item-card {
+      width: 18rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .menu-item-card img {
+      max-height: 200px;
+      object-fit: cover;
+    }
+    .menu-item-card .card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="Banner-3.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="Banner-2.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="Banner-1.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="container mt-5">
+  <h1 class="text-center">MENU</h1>
+  <hr>
+
+  <div class="d-flex flex-wrap justify-content-center">
+    <% data.forEach(item => { %>
+      <div class="card text-center m-4 menu-item-card">
+        <img class="card-img-top" src="<%= item.img %>" alt="<%= item.item_name %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= item.item_name %></h5>
+          <p class="card-text"><%= item.description %></p>
+          <a href="/kart" class="btn btn-danger">Order Now</a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+  <div class="faq-page">
+    <div class="faq_area section_padding_130" id="faq">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-8 col-lg-6">
+            <div class="section-heading text-center wow fadeInUp" data-wow-delay="0.2s">
+              <h3><span>Frequently</span> Asked Questions</h3>
+              <p>WOR_Eats is the most popular and tasty fast food restaurant in town.</p>
+              <div class="line"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-lg-8">
+            <div class="accordion faq-accordian" id="faqAccordion">
+              <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="card-header" id="headingOne">
+                  <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Why WOR_Eats?<span class="lni-chevron-up"></span>
+                  </h6>
+                </div>
+                <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                  <div class="card-body">
+                    <p>
+                      Choosing our restaurant means embarking on a culinary journey that promises unforgettable flavors, impeccable service, and a welcoming atmosphere. Here, we blend passion with expertise to deliver a dining experience that transcends mere sustenance.
+                    </p>
+                    <p>
+                      In short, when you choose our restaurant, you're not just choosing a place to eat – you're choosing an experience that delights the senses, satisfies the soul, and leaves you eagerly anticipating your next visit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="card-header" id="headingTwo">
+                  <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    Does your restaurant offer takeout or delivery options?<span class="lni-chevron-up"></span>
+                  </h6>
+                </div>
+                <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                  <div class="card-body">
+                    <p>
+                      Yes, we offer both takeout and delivery options for your convenience. Simply place your order online or by phone, and we'll have your meal ready for pickup or deliver it right to your doorstep.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="card-header" id="headingThree">
+                  <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    Is parking available onsite?<span class="lni-chevron-up"></span>
+                  </h6>
+                </div>
+                <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                  <div class="card-body">
+                    <p>
+                      Yes, we offer onsite parking for our guests' convenience. Additionally, there may be nearby street parking or public parking lots available depending on the location of our restaurant.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp" data-wow-delay="0.5s">
+              <i class="lni-emoji-sad"></i>
+              <p class="mb-0 px-2"></p>
+              <!-- <a href="#" class="btn btn-warning">Contact Support</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center text-lg-start">
+    <div class="container p-4">
+      <div class="row mt-4">
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <h5 id="About" class="text-uppercase mb-4">About US</h5>
+          <p>
+            Welcome to our food restaurant, where every dish tells a story of flavor and freshness. From the sizzle of our signature steaks to the delicate dance of spices in our exotic dishes, each bite is a journey through culinary excellence.
+          </p>
+          <p>
+            At our food restaurant, we believe that great food should be enjoyed in good company. Whether you're dining with friends, family, or that special someone, we strive to create an unforgettable experience that leaves you craving more. So come join us, and let your taste buds embark on a delicious adventure.
+          </p>
+          <div class="footer-social mt-4">
+            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-facebook-f"></i></a>
+            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-dribbble"></i></a>
+            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-twitter"></i></a>
+            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-google-plus-g"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Contact Us</h5>
+          <ul class="fa-ul" style="margin-left: 1.65em;">
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">839-J, LDA Avenue-I, Lahore</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">m.wahab2082@gmail.com</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+92 302 249 9907</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+92 316 2068 007</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Opening Hours</h5>
+          <table class="table text-center text-white">
+            <tbody class="font-weight-normal">
+              <tr>
+                <td>Mon - Thu:</td>
+                <td>4pm - 4am</td>
+              </tr>
+              <tr>
+                <td>Fri - Sat:</td>
+                <td>3pm - 5am</td>
+              </tr>
+              <tr>
+                <td>Sunday:</td>
+                <td>3pm - 4am</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+  </footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+<script>
+  function addToCart(itemId) {
+    fetch('/add-to-cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ itemId: itemId })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert('Item added to cart');
+      } else {
+        alert('Failed to add item to cart');
+      }
+    })
+    .catch(error => console.error('Error:', error));
+  }
+</script>
+</body>
+</html>

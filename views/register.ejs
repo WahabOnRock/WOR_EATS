@@ -1,0 +1,77 @@
+<style>
+    /* General Styles */
+body, html {
+margin: 0;
+padding: 0;
+font-family: 'Trebuchet MS', sans-serif;
+background-color: #f8f9fa; /* Light grey background */
+}
+
+/* Container for login form */
+.container {
+max-width: 500px;
+margin: 100px auto;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+background-color: white;
+}
+
+/* Form title */
+h2 {
+color: #55042a;
+}
+
+/* Input fields */
+.form-control {
+border-radius: 5px;
+border: 1px solid #55042a;
+}
+
+/* Submit button */
+.btn-primary {
+background-color: #55042a;
+border: none;
+border-radius: 5px;
+}
+
+.btn-primary:hover {
+background-color: #450321;
+}
+
+.text-center a {
+color: #55042a;
+}
+
+.text-center a:hover {
+text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center my-5">Sign Up</h2>
+    <form action="/register" method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input name="name" type="text" class="form-control" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input name="email" type="email" class="form-control" id="email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="address">Delivery Address</label>
+            <input name="deliveryaddress" type="text" class="form-control" id="address" placeholder="Enter your address">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+        <p class="text-center mt-3">Already have an account? <a href="/login">Login</a></p>
+    </form>
+</div>
+</body>

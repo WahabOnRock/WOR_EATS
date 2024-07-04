@@ -1,0 +1,40 @@
+<nav style="background-color: rgb(85, 4, 42);" class="navbar navbar-expand-lg navbar-light fixed-top ">
+     
+      
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a style="color: white;" class="nav-link" href="/">Home <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a style="color: white;"  class="nav-link" href="#About">About Us <span class="sr-only"></span></a>
+        </li>
+        
+       
+      </ul>
+      <img style="margin-right: 25%; margin-bottom: -2%; margin-top: -1%;" src="logo.png" width="140px" height="140px" class="d-inline-block align-top"  alt="LOGO-IMAGE">
+      <!-- Login Button -->
+<a href="/login" class="btn" style="background-color: #55042a; color: white; border-color: white;">
+Login
+</a>
+
+<!-- Signup Button -->
+<a href="/register" class="btn" style="background-color: #55042a; color: white; border-color: #55042a; margin-right: 1%;">
+Signup
+</a>
+
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+        <button style="color: white; outline-color: white;border-color: white" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> -->
+      <form action="/search" method="get">
+        <input type="text" name="query" placeholder="Search...">
+        <button type="submit">Search</button>
+      </form>
+      
+    </div>
+  </nav>
